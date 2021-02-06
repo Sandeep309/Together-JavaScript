@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="WOW-master/css/libs/animate.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Together-SignUp</title>
+  </head>
+
+  <body class="coverimg">
+    <header class="container p-1 text-center wow fadeIn">
+      <img src="img/Together_Logo_white.png" class="img-fluid logo" />
+    </header>
+
+    <section class="container">
+      <div class="row">
+        <!-- WELCOME CONTENT -->
+        <div class="col-lg-6 mb-5">
+          <div class="card border-0 mt-5 bg-transparent wow fadeIn">
+            <div class="card-body text-light text-center text-lg-left">
+              <h1 class="card-title">
+                <b>Make Cool Friends</b>
+              </h1>
+              <p class="card-text">
+                Together is a social networking site that can be used to connect
+                people.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- FORM CONTENT -->
+        <div class="col-lg-6 my-3 mt-5">
+          <!-- FORM ROW -->
+          <div class="row wow fadeIn">
+            <!-- FORM SWICHER -->
+            <div class="col-12 px-5">
+              <div
+                class="nav bg_grad rounded-top d-flex justify-content-around"
+              >
+                <a
+                  id="loginBtn"
+                  class="text-light nav-link c_pointer"
+                  onclick="showLogIn()"
+                  >Log in</a
+                >
+                <a
+                  id="signupBtn"
+                  class="text-muted nav-link c_pointer"
+                  onclick="showsignUp()"
+                  >Sign up</a
+                >
+              </div>
+            </div>
+            <!-- FORMS -->
+            <div class="col-12">
+              <div
+                class="card border-0 p-3 shadow rounded"
+                style="min-height: 560px"
+              >
+                <!-- Login Body -->
+                <div id="loginCard" class="card-body animated fadeIn">
+                  <h3 class="card-title bg_nevyt">Login</h3>
+                  <small class="card-subtitle">Log into your account</small>
+
+                  <form
+                    class="mt-2"
+                    name="logForm"
+                    onsubmit="return logInVaidation()"
+                    action="home.html"
+                  >
+                    <div class="form-group">
+                      <input
+                        name="logUser"
+                        type="text"
+                        class="form-control rounded-pill"
+                        placeholder="Username"
+                        required
+                      />
+                      <small class="form-text text-muted">
+                        Your username must be 5-10 characters long.
+                      </small>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="logPass"
+                        type="password"
+                        id="passInput"
+                        class="form-control rounded-pill"
+                        placeholder="Password"
+                        required
+                      />
+                      <small class="form-text text-muted">
+                        Your password must be 8-10 characters long.
+                      </small>
+                      <span class="p-2">
+                        <i onclick="showBtn(event)" class="far fa-eye"></i>
+                      </span>
+                    </div>
+
+                    <div class="form-group">
+                      <p>
+                        <a href="#" class="text-left">Forgot Password?</a>
+                      </p>
+                      <button class="btn btn_nevy text-light rounded-pill">
+                        Log In
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Sign Body -->
+                <div id="signupCard" class="card-body animated fadeIn d-none">
+                  <h3 class="card-title bg_nevyt">Sign Up</h3>
+                  <small class="card-subtitle">
+                    Be cool and join today. Meet millions
+                  </small>
+                  <form
+                    class="mt-2"
+                    name="signForm"
+                    onsubmit="return signUpVaidation()"
+                    action="home.html"
+                  >
+                    <div class="form-group">
+                      <input
+                        name="signUser"
+                        type="text"
+                        class="form-control rounded-pill"
+                        placeholder="Username*"
+                        required
+                      />
+                      <small class="form-text text-muted">
+                        Your username must be 5-10 characters long.
+                      </small>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="signEmail"
+                        type="text"
+                        class="form-control rounded-pill"
+                        placeholder="Enter email*"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="signPass"
+                        type="password"
+                        class="form-control rounded-pill"
+                        placeholder="Password*"
+                        required
+                      />
+                      <small class="form-text text-muted">
+                        Your password must be 8-10 characters long.
+                      </small>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-12 text-muted">
+                        Date Of Birth
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-sm-3">
+                        <select
+                          class="form-control rounded-pill"
+                          id="exampleFormControlSelect1"
+                        >
+                          <option>Day</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                          <option>13</option>
+                          <option>14</option>
+                          <option>15</option>
+                          <option>16</option>
+                          <option>17</option>
+                          <option>17</option>
+                          <option>18</option>
+                          <option>19</option>
+                          <option>20</option>
+                          <option>21</option>
+                          <option>22</option>
+                          <option>23</option>
+                          <option>24</option>
+                          <option>25</option>
+                          <option>26</option>
+                          <option>27</option>
+                          <option>28</option>
+                          <option>29</option>
+                          <option>30</option>
+                          <option>31</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-sm-3">
+                        <select
+                          class="form-control rounded-pill"
+                          id="exampleFormControlSelect1"
+                        >
+                          <option>Month</option>
+                          <option>Jan</option>
+                          <option>Fab</option>
+                          <option>Mar</option>
+                          <option>April</option>
+                          <option>May</option>
+                          <option>June</option>
+                          <option>Auly</option>
+                          <option>Aug</option>
+                          <option>Sep</option>
+                          <option>Oct</option>
+                          <option>Nov</option>
+                          <option>Dec</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-sm-6">
+                        <select
+                          class="form-control rounded-pill"
+                          id="exampleFormControlSelect1"
+                        >
+                          <option>Year</option>
+                          <option>1995</option>
+                          <option>1996</option>
+                          <option>1997</option>
+                          <option>1998</option>
+                          <option>1999</option>
+                          <option>2000</option>
+                          <option>2001</option>
+                          <option>2002</option>
+                          <option>2003</option>
+                          <option>2004</option>
+                          <option>2005</option>
+                          <option>2006</option>
+                          <option>2007</option>
+                          <option>2008</option>
+                          <option>2009</option>
+                          <option>2010</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="inlineRadio1"
+                          value="option1"
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="inlineRadio1"
+                          >Male</label
+                        >
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="inlineRadioOptions"
+                          id="inlineRadio2"
+                          value="option2"
+                        />
+                        <label
+                          class="form-check-label text-muted"
+                          for="inlineRadio2"
+                          >Female</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <input
+                          type="text"
+                          class="form-control rounded-pill"
+                          id="inputCity"
+                          placeholder="Your city"
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <select
+                          id="inputState"
+                          class="form-control rounded-pill"
+                        >
+                          <option selected desabled>Country</option>
+                          <option>Armenia</option>
+                          <option>Belgium</option>
+                          <option>Canada</option>
+                          <option>Dominica</option>
+                          <option>India</option>
+                          <option>Russia</option>
+                          <option>China</option>
+                          <option>Japan</option>
+                          <option>UAE</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <p>
+                        <a href="#" class="text-left">
+                          Already have an account?
+                        </a>
+                      </p>
+                      <button class="btn btn_nevy text-light rounded-pill">
+                        Sign Up
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="container-fluid p-3 border-top">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="text-light">LANGUAGE</a>
+        <a href="#" class="text-light">TERMS</a>
+        <a href="#" class="text-light">PRIVACY</a>
+        <a href="#" class="text-light">CARRER</a>
+      </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="WOW-master/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="WOW-master/css/libs/animate.css" />
+    <title>Together-Friends</title>
+  </head>
+
+  <body style="background-color: #f0f2f5 !important">
+    <!-- setting modal box -->
+    <div id="modalbox" class="modal animated fadeInDown">
+      <div class="modal_content">
+        <div class="card text-center border-0 mx-auto" style="max-width: 48rem">
+          <div class="card-header border-0 bg_nevy">
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-6">
+                <b class="text-light">Generel Settings</b>
+              </div>
+              <div class="col-3 text-right">
+                <a href="#" class="card-link text-dark" onclick="closebtn()">
+                  <i class="fas fa-times"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <!-- user name -->
+            <div class="row my-5">
+              <div class="col-sm-3">
+                <p class="card-text"><b>User name:</b></p>
+              </div>
+              <div class="col-sm-6">
+                <p class="card-text">My user</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="card-text">
+                  <i class="fas fa-pencil-alt"></i>
+                  <i>Edit</i>
+                </p>
+              </div>
+            </div>
+            <!-- email -->
+            <div class="row my-5">
+              <div class="col-sm-3">
+                <p class="card-text"><b>Email:</b></p>
+              </div>
+              <div class="col-sm-6">
+                <p class="card-text">example@email.com</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="card-text">
+                  <i class="fas fa-pencil-alt"></i>
+                  <i>Edit</i>
+                </p>
+              </div>
+            </div>
+            <!-- password -->
+            <div class="row my-5">
+              <div class="col-sm-3">
+                <p class="card-text"><b>Change password:</b></p>
+              </div>
+              <div class="col-sm-6">
+                <p class="card-text">*******</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="card-text">
+                  <i class="fas fa-pencil-alt"></i>
+                  <i>Edit</i>
+                </p>
+              </div>
+            </div>
+            <!-- Email notification -->
+            <div class="row my-5">
+              <div class="col-sm-3">
+                <p class="card-text"><b>Notifications Email:</b></p>
+              </div>
+              <div class="col-sm-6">
+                <div class="custom-control custom-switch">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
+                    id="customSwitch1"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="customSwitch1"
+                  ></label>
+                </div>
+              </div>
+              <div class="col-sm-3"></div>
+            </div>
+          </div>
+
+          <div class="card-footer bg-transparent d-flex justify-content-end">
+            <button
+              class="btn btn-outline-dark btn-sm mr-2"
+              onclick="closebtn()"
+            >
+              close
+            </button>
+            <button class="btn btn-primary btn-sm">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="container-fluid bg_nevy shadow-sm" id="myheader">
+      <div class="row">
+        <div class="col-3 col-sm-2"></div>
+
+        <div class="col-9 col-sm-10">
+          <header class="bg_nevy p-2 head">
+            <div class="row">
+              <!-- Search Input -->
+              <div class="col-md-3 searchRow">
+                <form class="search">
+                  <input
+                    class="form-control form-control-sm border-0 rounded-pill mt-md-1"
+                    id="srchInpt"
+                    type="search"
+                    placeholder="Search friends, photos, videos"
+                    id="input"
+                    aria-label="Search"
+                  />
+                </form>
+              </div>
+
+              <!-- Navigations -->
+              <div class="col-md-9 searchRow">
+                <ul class="nav nav-justified nav_bar">
+                  <li class="nav-item">
+                    <a class="nav-link text-light active" href="home.html">
+                      <i class="fas fa-database"></i>
+                      <span class="hide_md">Home</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="MyUserProfile.html">
+                      <i class="fas fa-user"></i>
+                      <span class="hide_md">Profile</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="friends.html">
+                      <i class="fas fa-user-friends"></i>
+                      <span class="hide_md">Friends</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="peopleNearby.html">
+                      <i class="fas fa-street-view"></i>
+                      <span class="hide_md">Nearby</span>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle text-light"
+                      data-toggle="dropdown"
+                      href="#"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fas fa-cogs"></i>
+                      <span class="hide_md">Settings</span>
+                    </a>
+                    <div class="dropdown-menu border-0 shadow">
+                      <a class="dropdown-item c_pointer" id="modalbtn">
+                        <i class="fas fa-wrench"></i> Settings
+                      </a>
+                      <a class="dropdown-item">
+                        <i class="fas fa-question"></i> FAQ
+                      </a>
+                      <a class="dropdown-item" href="SignUpPage.html">
+                        <i class="fas fa-sign-out-alt"></i> Log Out
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR PROFILE LEFT -->
+    <div class="side_bar bg-white p-2 shadow">
+      <figure class="profile_img img-fluid mx-auto">
+        <img class="img-fluid" src="img/my user.jpg" alt="profile image" />
+      </figure>
+      <h5 class="text-center font-weight-bold mt-3 hide_sm">
+        <a href="MyUserProfile.html" class="text-decoration-none">My user</a>
+      </h5>
+      <p class="text-center hide_sm">
+        <i>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          reiciendis!
+        </i>
+      </p>
+    </div>
+
+    <!-- CENTER POSTS -->
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-2 hide_sm"></div>
+        <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+          <div class="row">
+            <!-- PRIMARY POSTS -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 px-md-5">
+              <!-- CREATE POST -->
+              <div class="card mb-3 p-2 border-0 shadow-sm post">
+                <div class="row no-gutters">
+                  <div class="col-3 col-sm-2 p-0 m-0">
+                    <img
+                      src="img/my user.jpg"
+                      class="card-img img-fluid"
+                      alt="profile image"
+                    />
+                  </div>
+
+                  <div class="col-9 col-sm-10 px-3">
+                    <div class="card-body border rounded p-1">
+                      <textarea
+                        class="form-control form-control-sm resize_none border-0"
+                        id="txtArea"
+                        placeholder="write something"
+                        cols="3"
+                        rows="1"
+                      ></textarea>
+
+                      <img class="card-img mt-2" id="output" />
+
+                      <div class="row">
+                        <div class="col-1 col-sm-2 col-md-6"></div>
+                        <div class="col-11 col-sm-10 col-md-6">
+                          <div class="d-flex justify-content-between px-2 py-1">
+                            <!-- AUDIO INPUT -->
+                            <label for="file-input-audio">
+                              <i class="fas fa-music"></i>
+                            </label>
+                            <input
+                              class="d-none"
+                              id="file-input-audio"
+                              type="file"
+                              accept="audio/*"
+                              onchange="loadFile(event)"
+                            />
+
+                            <!-- IMG INPUT -->
+                            <label for="file-input-img">
+                              <i class="far fa-image"></i>
+                            </label>
+                            <input
+                              class="d-none"
+                              id="file-input-img"
+                              type="file"
+                              accept="image/*"
+                              onchange="loadFile(event)"
+                            />
+
+                            <!-- VIDEO INPUT -->
+                            <label for="file-input-video">
+                              <i class="fas fa-video"></i>
+                            </label>
+                            <input
+                              class="d-none"
+                              id="file-input-video"
+                              type="file"
+                              accept="video/*"
+                              onchange="loadFile(event)"
+                            />
+
+                            <!-- CEMERA INPUT -->
+                            <label for="file-input-cemera">
+                              <i class="fas fa-camera"></i>
+                            </label>
+                            <input
+                              class="d-none"
+                              id="file-input-cemera"
+                              type="file"
+                              accept="camera/*"
+                              onchange="loadFile(event)"
+                            />
+
+                            <button
+                              class="btn btn_nevy text-light btn-sm rounded-pill"
+                              onclick="resetFile()"
+                            >
+                              Publish
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DECK 01 -->
+              <div class="card-deck">
+                <div class="card border-0 shadow-sm">
+                  <img src="img/1.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <img
+                      src="img/user 1.jpg"
+                      class="img-thumbnail border-0 mg_top rounded-circle"
+                      alt=""
+                    />
+                    <div class="d-flex justify-content-between">
+                      <p class="card-text">
+                        <a href="FrindProfilePage.html">Sophia Lee</a>
+                      </p>
+                      <p class="card-text">
+                        <a class="text-success" href="">My friend</a>
+                      </p>
+                    </div>
+                    <p class="card-text">Student at Harvard</p>
+                  </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                  <img src="img/2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <img
+                      src="img/user 2.jpg"
+                      class="img-thumbnail border-0 mg_top rounded-circle"
+                      alt=""
+                    />
+                    <div class="d-flex justify-content-between">
+                      <p class="card-text"><a href="">Robert Cook</a></p>
+                      <p class="card-text">
+                        <a class="text-success" href="">My friend</a>
+                      </p>
+                    </div>
+                    <p class="card-text">Photographer at Photography</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DECK 02 -->
+              <div class="card-deck mt-3">
+                <div class="card border-0 shadow-sm">
+                  <img src="img/3.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <img
+                      src="img/user 3.jpg"
+                      class="img-thumbnail border-0 mg_top rounded-circle"
+                      alt=""
+                    />
+                    <div class="d-flex justify-content-between">
+                      <p class="card-text"><a href="">John Doe</a></p>
+                      <p class="card-text">
+                        <a class="text-success" href="">My friend</a>
+                      </p>
+                    </div>
+                    <p class="card-text">Traveler</p>
+                  </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                  <img src="img/4.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <img
+                      src="img/user 4.jpg"
+                      class="img-thumbnail border-0 mg_top rounded-circle"
+                      alt=""
+                    />
+                    <div class="d-flex justify-content-between">
+                      <p class="card-text"><a href="">Robert Cook</a></p>
+                      <p class="card-text">
+                        <a class="text-success" href="">My friend</a>
+                      </p>
+                    </div>
+                    <p class="card-text">CEO at IT Farm</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DECK 03 -->
+              <div class="card-deck mt-3">
+                <div class="card border-0 shadow-sm">
+                  <img src="img/5.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <img
+                      src="img/user 1.jpg"
+                      class="img-thumbnail border-0 mg_top rounded-circle"
+                      alt=""
+                    />
+                    <div class="d-flex justify-content-between">
+                      <p class="card-text"><a href="">Julia Cox</a></p>
+                      <p class="card-text">
+                        <a class="text-success" href="">My friend</a>
+                      </p>
+                    </div>
+                    <p class="card-text">Art Designer</p>
+                  </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                  <img src="img/6.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <img
+                      src="img/user 2.jpg"
+                      class="img-thumbnail border-0 mg_top rounded-circle"
+                      alt=""
+                    />
+                    <div class="d-flex justify-content-between">
+                      <p class="card-text"><a href="">Richard Bell</a></p>
+                      <p class="card-text">
+                        <a class="text-success" href="">My friend</a>
+                      </p>
+                    </div>
+                    <p class="card-text">Software Engineer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIDEBAR POSTS RIGHT -->
+            <div class="hide_md col-lg-4">
+              <!-- WHO TO FOLLOW -->
+              <div class="position-fixed card mb-3 p-2 border-0 shadow-sm">
+                <p class="card-text">Who to follow</p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="card border-0 rounded-0 p-0 bg-transparent">
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img
+                            src="img/user 1.jpg"
+                            class="card-img"
+                            alt="user image"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <a class="card-text d-block" href="">Diana Amber</a>
+                            <a class="card-text text-success" href=""
+                              >Add friend</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="card border-0 rounded-0 bg-transparent">
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img
+                            src="img/user 2.jpg"
+                            class="card-img"
+                            alt="user image"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <a class="card-text d-block" href="">Cris Haris</a>
+                            <a class="card-text text-success" href=""
+                              >Add friend</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="card border-0 rounded-0 bg-transparent">
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img
+                            src="img/user 3.jpg"
+                            class="card-img"
+                            alt="user image"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <a class="card-text d-block" href=""
+                              >Brian Walton</a
+                            >
+                            <a class="card-text text-success" href=""
+                              >Add friend</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="card border-0 rounded-0 bg-transparent">
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img
+                            src="img/user 4.jpg"
+                            class="card-img"
+                            alt="user image"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <a class="card-text d-block" href="">Richard</a>
+                            <a class="card-text text-success" href=""
+                              >Add friend</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      id="back-to-top"
+      class="btn btn-warning rounded back-to-top text-light"
+      role="button"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="WOW-master/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>
