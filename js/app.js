@@ -78,23 +78,20 @@ function logInVaidation() {
   const logUserId = document.logForm.logUser.value;
   const passId = document.logForm.logPass.value;
 
-  const userIdFormat = /^[a-zA-Z0-9_-]{5,10}$/;
-  const passIdFormat = /^[a-zA-Z\d].{8,10}$/g;
+  const userIdFormat = "admin";
+  const passIdFormat = "12345";
 
-  if (logUserId.match(userIdFormat)) {
-    var status = true;
-  } else {
-    alert("You have entered an wrong id !");
-    var status = false;
+  if (!logUserId.match(userIdFormat)) {
+    document.logForm.logUser.focus();
+    // alert("Wrong user id");
+    return false;
   }
-
-  if (passId.match(passIdFormat)) {
-    var status = true;
-  } else {
-    alert("You have entered an wrong password !");
-    var status = false;
+  if (!passId.match(passIdFormat)) {
+    document.logForm.logPass.focus();
+    // alert("Wrong password");
+    return false;
   }
-  return status;
+  return true;
 }
 
 // SIGN UP VALIDATION
@@ -107,28 +104,22 @@ function signUpVaidation() {
   const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const passcodeFormat = /^[a-zA-Z\d].{8,10}$/g;
 
-  if (usr.match(usrFormat)) {
-    var Rstatus = true;
-  } else {
-    alert("Please enter your name.");
-    var Rstatus = false;
+  if (!usr.match(usrFormat)) {
+    document.signForm.signUser.focus();
+    alert("Please enter valid user name.");
+    return false;
   }
-
-  if (email.match(mailFormat)) {
-    var Rstatus = true;
-  } else {
+  if (!email.match(mailFormat)) {
+    document.signForm.signEmail.focus();
     alert("Please enter a valid e-mail address.");
-    var Rstatus = false;
+    return false;
   }
-
-  if (passcode.match(passcodeFormat)) {
-    var Rstatus = true;
-  } else {
-    alert("Please enter your password");
-    var Rstatus = false;
+  if (!passcode.match(passcodeFormat)) {
+    document.signForm.signPass.focus();
+    alert("Please enter valid password");
+    return false;
   }
-
-  return Rstatus;
+  return true;
 }
 
 // hide and show password
