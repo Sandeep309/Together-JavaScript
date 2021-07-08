@@ -58,6 +58,7 @@ html {
   animation-duration: 0.4s;
 }
 .coverimg {
+  min-height: 100vh;
   background-image: url("../img/together-bg.png");
   background-position: center;
   background-attachment: fixed;
